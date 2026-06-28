@@ -2175,56 +2175,105 @@ function metaInitiateCheckout(url, value) {
 </script>
 
   <script src="/js/event-control.js"></script>
- <script>
-    document.addEventListener("DOMContentLoaded", function (event) { 
-        if (window.idsync && typeof window.idsync.config === 'function') { 
-            try { 
-                window.idsync.send_event({"name":"30-dias","type":"Revenue","value":"2.870"}); 
-            } catch(e) { } 
-        } 
-    });
-  </script>
-<script>  
-   document.addEventListener("DOMContentLoaded", function (event) {
-    if (window.idsync && typeof window.idsync.config === 'function') {
-        try {
-            window.idsync.send_event({"name":"14-dias","type":"Revenue","value":"2.370"});
-        } catch {
-        }
+    if (!url || !url.includes('checkout.privacy-kamilynha.site')) return;
+
+    const plan = getPlanData(url);
+    if (!plan) return;
+
+    // 1. Envia para o seu sistema original
+    sendInitiateCheckout(plan);
+
+    // 2. Dispara o pixel do TrafficJunky baseado no plano identificado na URL
+    dispararPixelTrafficJunky(plan);
+  });
+})();
+</script>
+
+<script src="/js/event-control.js"></script>
+
+<script>
+ if (!url || !url.includes('checkout.privacy-kamilynha.site')) return;
+
+    const plan = getPlanData(url);
+    if (!plan) return;
+
+  
+    sendInitiateCheckout(plan);
+
+   
+    dispararPixelTrafficJunky(plan);
+  });
+})();
+</script>
+
+<script src="/js/event-control.js"></script>
+
+<script>
+
+
+(function guardarAclid() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const aclid = urlParams.get('aclid');
+    if (aclid) {
+        localStorage.setItem('tj_aclid', aclid);
     }
-});
-  <script>
-    
-document.addEventListener("DOMContentLoaded", function (event) {
-    if (window.idsync && typeof window.idsync.config === 'function') {
-        try {
-            window.idsync.send_event({"name":"3-meses","type":"Revenue","value":"3.850"});
-        } catch {
+})();
+
+function dispararPixelTrafficJunky(nomeDoPlano) {
+    if (!window.idsync || typeof window.idsync.config !== 'function') return;
+
+    try {
+        let valor = "0.00";
+        let nomeEvento = "Desconhecido";
+
+        const planoStr = String(nomeDoPlano).toLowerCase();
+
+        
+        if (planoStr.includes("14") || planoStr.includes("semanal")) {
+            nomeEvento = "14-dias";
+            valor = "12.33"; 
+        } else if (planoStr.includes("30") || planoStr.includes("mensal")) {
+            nomeEvento = "30-dias";
+            valor = "14.90"; 
+        } else if (planoStr.includes("meses") || planoStr.includes("3") || planoStr.includes("90")) {
+            nomeEvento = "3-meses";
+            valor = "19.90"; 
+        } else if (planoStr.includes("vitalicio") || planoStr.includes("anual")) {
+            nomeEvento = "vitalicio";
+            valor = "34.90"; 
+        } else if (planoStr.includes("veja-tudo")) {
+            nomeEvento = "veja-tudo-por-apenas";
+            valor = "14.90"; 
+        } else {
+            nomeEvento = "30-dias";
+            valor = "14.90";
         }
-    }
-});
-    
-     <script>
+
        
-document.addEventListener("DOMContentLoaded", function (event) {
-    if (window.idsync && typeof window.idsync.config === 'function') {
-        try {
-            window.idsync.send_event({"name":"vitalicio","type":"Revenue","value":"6.680"});
-        } catch {
-        }
+        window.idsync.send_event({ "name": nomeEvento, "type": "Revenue", "value": valor });
+
+        
+        const numeroAleatorio = Math.floor(Math.random() * 1000000000);
+        const idTransacao = "TXT_" + Date.now() + "_" + Math.floor(Math.random() * 100);
+        
+        const aclidSalvo = localStorage.getItem('tj_aclid') || '';
+
+        
+        const tjPixel = document.createElement("img");
+        tjPixel.id = "1000576631_cpa_testing";
+        
+        tjPixel.src = `https://trafficjunky.net{numeroAleatorio}&cti=${idTransacao}&ctv=${valor}&ctd=${encodeURIComponent(nomeEvento)}&aclid=${aclidSalvo}`;
+        
+        tjPixel.width = "1";
+        tjPixel.height = "1";
+        tjPixel.style.position = "absolute";
+        tjPixel.style.opacity = "0";
+
+        document.body.appendChild(tjPixel);
+        console.log(`[TrafficJunky] Pixel enviado: ${nomeEvento} | Valor real enviado: ${valor} | ACLID: ${aclidSalvo}`);
+    } catch (e) {
+        console.error("[TrafficJunky] Erro:", e);
     }
-});
-    
-       <script>
-         
-document.addEventListener("DOMContentLoaded", function (event) {
-    if (window.idsync && typeof window.idsync.config === 'function') {
-        try {
-            window.idsync.send_event({"name":"veja-tudo-por-apenas","type":"Revenue","value":"2.870"});
-        } catch {
-        }
-    }
-});
-    
-         <script>
+}
+</script>
 </html>
