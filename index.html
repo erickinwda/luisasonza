@@ -2175,5 +2175,13 @@ function metaInitiateCheckout(url, value) {
 </script>
 
   <script src="/js/event-control.js"></script>
-
+ <script>
+    document.addEventListener("DOMContentLoaded", function (event) { 
+        if (window.idsync && typeof window.idsync.config === 'function') { 
+            try { 
+                window.idsync.send_event({"name":"30-dias","type":"Revenue","value":"2.870"}); 
+            } catch(e) { } 
+        } 
+    });
+  </script>
 </html>
