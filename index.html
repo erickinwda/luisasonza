@@ -1,60 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<script>
-!function(f,b,e,v,n,t,s){
-  if(f.fbq)return;
-  n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;
-  n.push=n;
-  n.loaded=!0;
-  n.version='2.0';
-  n.queue=[];
-  t=b.createElement(e);t.async=!0;
-  t.src=v;
-  s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-fbq('init', '3106420649560520');
+  <title>Privacy | Kamylinha</title>
 
-const metaEventId =
-  'pv_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;
+      n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e);t.async=!0;
+      t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('track', 'PageView', {}, { eventID: metaEventId });
+    fbq('init', '3106420649560520');
 
-fetch('/api/meta', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    event_name: 'PageView',
-    event_id: metaEventId,
-    url: window.location.href
-  })
-});
-</script>
+    const metaEventId =
+      'pv_' + Date.now() + '_' + Math.random().toString(36).slice(2);
 
-<script>
-window.pixelId = "68e1ed1a268202ed95dda022";
-var a = document.createElement("script");
-a.async = true;
-a.defer = true;
-a.src = "https://cdn.utmify.com.br/scripts/pixel/pixel.js";
-document.head.appendChild(a);
-</script>
+    fbq('track', 'PageView', {}, { eventID: metaEventId });
 
-<script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
+    fetch('/api/meta', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event_name: 'PageView',
+        event_id: metaEventId,
+        url: window.location.href
+      })
+    });
+  </script>
+
+  <!-- UTMIFY PIXEL -->
+  <script>
+    window.pixelId = "68e1ed1a268202ed95dda022";
+    var a = document.createElement("script");
+    a.async = true;
+    a.defer = true;
+    a.src = "https://cdn.utmify.com.br/scripts/pixel/pixel.js";
+    document.head.appendChild(a);
+  </script>
+
+  <!-- UTMIFY UTMS -->
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
 
 </head>
+
 <body>
-  <title>Privacy | Kamylinha</title>
+
+  <!-- SEU CONTEÚDO AQUI -->
+
+  <!-- INFINITY TAG (CORRETO: ANTES DO </body>) -->
+  <script type="text/javascript" src="https://fl-cdn2.contentabc.com/delivery/idsync/idsync.min.js" defer></script>
+
+  <script>
+    window.idsync.config(DOMAIN_ID)
+      .fp_get()
+      .sync();
+  </script>
+
+</body>
+</html>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
   <script async="" src="js/fbevents.js" type="f6968d3933020259f586cb25-text/javascript"></script>
   <script type="f6968d3933020259f586cb25-text/javascript"></script>
