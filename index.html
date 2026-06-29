@@ -63,17 +63,18 @@
 </head>
 
 <body>
-
-  <!-- SEU CONTEÚDO AQUI -->
-
-  <!-- INFINITY TAG (CORRETO: ANTES DO </body>) -->
   <script type="text/javascript" src="https://fl-cdn2.contentabc.com/delivery/idsync/idsync.min.js" defer></script>
-
-  <script>
-    window.idsync.config(DOMAIN_ID)
-      .fp_get()
-      .sync();
-  </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    if (window.idsync && typeof window.idsync.config === 'function') {
+      try {
+        window.idsync.config(37745)
+          .fp_get()
+          .sync();
+      } catch (e) { }
+    }
+  });
+</script>
 
 </body>
 </html>
