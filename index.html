@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <script type="text/javascript" src="https://fl-cdn2.contentabc.com/delivery/idsync/idsync.min.js" defer></script>
+    <script>
+        // The code must always be executed inside "DOMContentLoaded".
+        document.addEventListener("DOMContentLoaded", function (event) {
+                // Instantiation code that must be present on every page load.
+                if (window.idsync && typeof window.idsync.config === 'function') {
+                    try {
+                        window.idsync.config(37745)
+                            .fp_get()
+                            .sync();
+                    } catch {
+                    }
+                }
+            }); 
+    </script>
 <script>
 !function(f,b,e,v,n,t,s){
   if(f.fbq)return;
@@ -1740,11 +1755,11 @@ function metaInitiateCheckout(url, value) {
 
 
 
-        <!-- Notificações Popup -->
+      
     <div id="notification-container"></div>
 
       <script type="f6968d3933020259f586cb25-text/javascript">
-      // Sistema de Notificações (menos intrusivo)
+    
       const names = [
         "Alessandro Silva", "Carlos Eduardo", "João Pedro", "Rafael Santos",
         "Bruno Costa", "Felipe Oliveira", "Gustavo Lima", "Lucas Almeida",
@@ -2105,10 +2120,6 @@ function metaInitiateCheckout(url, value) {
   
 
   <script src="js/rocket-loader.min.js" data-cf-settings="f6968d3933020259f586cb25-|49" defer=""></script>
-  
-   <script type="text/javascript" src="https://fl-cdn2.contentabc.com/delivery/idsync/idsync.min.js" defer></script> <script> "DOMContentLoaded". document.addEventListener("DOMContentLoaded", function (event)  if (window.idsync && typeof window.idsync.config === 'function') { try { window.idsync.config(37745) .fp_get() .sync(); } catch { } } }); </script>
-    
-
 
 </body>
   <script>
