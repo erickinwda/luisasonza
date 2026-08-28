@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- Mirrored from www-privacy.shop/deg/desconto/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Nov 2025 01:55:19 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DESCONTO</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '958954899926961');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=958954899926961&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJ9DNEXVPW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KJ9DNEXVPW');
+  </script>
+
+  <script
+    src="../../../cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      padding-bottom: 100px; /* espaço pro botão fixo */
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    .small-video {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      margin: 15px auto 25px auto;
+      display: block;
+    }
+
+    .banner {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .highlight {
+      color: #f15a24;
+      font-weight: bold;
+    }
+
+    .cta-button {
+      background-color: #f15a24;
+      color: white;
+      border: none;
+      padding: 18px 25px;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 0 15px rgba(241, 90, 36, 0.6);
+      animation: pulse 1.5s infinite;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translateX(-50%) scale(1);
+        box-shadow: 0 0 10px rgba(241, 90, 36, 0.6);
+      }
+      50% {
+        transform: translateX(-50%) scale(1.08);
+        box-shadow: 0 0 25px rgba(241, 90, 36, 0.9);
+      }
+      100% {
+        transform: translateX(-50%) scale(1);
+        box-shadow: 0 0 10px rgba(241, 90, 36, 0.6);
+      }
+    }
+
+    .taxa {
+      margin-top: 20px;
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="images/logo_privacy.webp" alt="Privacy Logo" class="logo">
+
+    <video class="banner" autoplay muted loop playsinline>
+      <source src="media/duda.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+
+    <div class="message">
+      Amor, entendi que você não pode pagar a taxa da chamada agora 😔<br><br>
+      Mas não quero te deixar na vontade...<br><br>
+      Que tal receber um <span class="highlight">vídeo exclusivo curtinho</span> que gravei só pra quem tá quase lá?<br><br>
+      Estou <span class="highlight">me tocando e chamando seu nome</span>, só que sem chamada ao vivo...<br><br>
+      <strong>É só R$6,90 pra liberar, e você já sai com um mimo meu 😘</strong>
+    </div>
+
+    <div class="taxa">
+      Oferta única. Liberado imediatamente após o pagamento.
+    </div>
+  </div>
+
+  <button class="cta-button" onclick="abrirCheckoutPix('video_exclusivo', 6.90, 'VÍDEO EXCLUSIVO', 690)">
+    LIBERAR VÍDEO
+  </button>
+</body>
+
+<!-- Modal de Checkout PIX -->
+<div id="pix-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; align-items: center; justify-content: center; z-index: 99999; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px);">
+  <div style="background: linear-gradient(135deg, #ff6b6b, #ff4757); border-radius: 20px; padding: 40px; max-width: 450px; width: 92%; text-align: center; position: relative; overflow: hidden; box-shadow: 0 25px 50px rgba(255, 71, 87, 0.4);">
+    <button id="close-pix-modal" type="button" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); border: none; border-radius: 50%; width: 45px; height: 45px; color: white; font-size: 24px; font-weight: 700; cursor: pointer; backdrop-filter: blur(5px); transition: all 0.3s ease; z-index: 10; line-height: 1; padding: 0; display: flex; align-items: center; justify-content: center;">
+      &times;
+    </button>
+    
+    <h2 style="color: white; margin: 0 0 15px; font-size: 28px; font-weight: 900; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Pagamento PIX</h2>
+    <p style="color: rgba(255,255,255,0.9); margin: 0 0 30px; font-size: 16px; line-height: 1.5;">Escaneie o QR Code ou copie o código abaixo</p>
+
+    <div id="buyer-form">
+      <div style="margin-bottom: 20px; text-align: left;">
+        <label for="buyer-name" style="display:block; color:rgba(255,255,255,0.9); font-size:14px; font-weight:600; margin-bottom:8px;">Nome</label>
+        <input id="buyer-name" type="text" placeholder="Seu nome completo" style="background:rgba(255,255,255,0.15); border:none; border-radius:12px; padding:16px 20px; font-size:16px; color:white; width:100%; box-sizing:border-box;" onfocus="this.style.background='rgba(255,255,255,0.2)'" onblur="this.style.background='rgba(255,255,255,0.15)'">
+      </div>
+      <div style="margin-bottom: 25px; text-align: left;">
+        <label for="buyer-email" style="display:block; color:rgba(255,255,255,0.9); font-size:14px; font-weight:600; margin-bottom:8px;">E-mail</label>
+        <input id="buyer-email" type="email" placeholder="seu@email.com" style="background:rgba(255,255,255,0.15); border:none; border-radius:12px; padding:16px 20px; font-size:16px; color:white; width:100%; box-sizing:border-box;" onfocus="this.style.background='rgba(255,255,255,0.2)'" onblur="this.style.background='rgba(255,255,255,0.15)'">
+      </div>
+      
+      <div style="background:rgba(255,255,255,0.1); border-radius:16px; padding:20px; margin-bottom:25px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <span style="color:rgba(255,255,255,0.8); font-size:14px; font-weight:600;">Plano:</span>
+          <div id="pix-plan-name" style="color:white; font-size:18px; font-weight:800; background:rgba(0,0,0,0.2); padding:4px 12px; border-radius:20px;"></div>
+        </div>
+        <div id="pix-plan-price" style="color:white; font-size:24px; font-weight:900; margin-top:8px;"></div>
+      </div>
+      
+      <button id="pix-generate-btn" onclick="gerarPix()" style="background:linear-gradient(to right, #ffd700, #ffed4e); color:#1a1a1a; border:none; border-radius:50px; padding:18px 40px; font-size:18px; font-weight:800; cursor:pointer; width:100%; letter-spacing:0.5px; text-transform:uppercase; box-shadow:0 8px 25px rgba(255, 215, 0, 0.4); transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0px)'">
+        Gerar PIX Agora
+      </button>
+    </div>
+
+    <div id="pix-content" style="display: none;">
+      <p id="pix-status" style="color: #fff; font-size: 16px; font-weight: 600; margin: 0 0 25px;">PIX gerado!</p>
+      
+      <div style="background:rgba(0,0,0,0.2); border-radius:16px; padding:25px; margin-bottom:30px;">
+        <p style="color:rgba(255,255,255,0.8); margin:0 0 12px; font-size:15px; font-weight:600;">Valor a pagar</p>
+        <p id="pix-amount" style="color:#fff; font-size:36px; font-weight:900; margin:0;">R$ 0,00</p>
+      </div>
+      
+      <div style="margin-bottom:25px; display:flex; justify-content:center;">
+        <img id="pix-qr-code" style="width:200px; height:200px; border-radius:16px; border:3px solid rgba(255,255,255,0.3);" alt="QR Code PIX">
+      </div>
+      
+      <div style="margin-bottom:25px;">
+        <p style="color:rgba(255,255,255,0.7); margin:0 0 10px; font-size:14px; font-weight:600;">Código PIX</p>
+        <input id="pix-code-text" type="text" readonly value="" style="background:rgba(0,0,0,0.2); border:none; border-radius:12px; padding:16px 20px; font-family:'Courier New', monospace; font-size:14px; color:#fff; letter-spacing:1px; width:100%; box-sizing:border-box;" onfocus="this.select()">
+      </div>
+      
+      <button id="pix-copy-btn" onclick="copiarCodigoPix()" style="background:linear-gradient(to right, #4facfe, #00f2fe); color:white; border:none; border-radius:50px; padding:16px 35px; font-size:16px; font-weight:700; cursor:pointer; width:100%; box-shadow:0 4px 15px rgba(79, 172, 254, 0.4);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+        Copiar Código PIX
+      </button>
+      
+      <p style="color:rgba(255,255,255,0.6); margin:25px 0 0; font-size:13px;">Aguarde confirmação do pagamento</p>
+    </div>
+
+    <div id="pix-delivered" style="display: none;">
+      <div style="background:rgba(0,0,0,0.2); border-radius:20px; padding:30px; margin-bottom:25px;">
+        <div style="font-size:50px; margin-bottom:15px;">✅</div>
+        <h3 style="color:white; margin:0 0 15px; font-size:24px; font-weight:800;">Pagamento Confirmado!</h3>
+        <p style="color:rgba(255,255,255,0.8); margin:0 0 20px; font-size:16px;">Seu vídeo exclusivo foi liberado!</p>
+      </div>
+      
+      <a id="pix-download-btn" href="#" target="_blank" style="display:inline-block; background:linear-gradient(to right, #ff9a9e, #fad0c4); color:#1a1a1a; text-decoration:none; border-radius:50px; padding:16px 35px; font-size:17px; font-weight:800; box-shadow:0 6px 20px rgba(255, 154, 158, 0.4);" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0px)'">
+        📦 ACESSAR VÍDEO
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentExternalId = null;
+  let currentPlan = null;
+  let pollInterval = null;
+
+  function trackEvent(eventName, params) {
+    if (typeof fbq !== 'undefined') {
+      fbq('track', eventName, params || {});
+    }
+  }
+
+  function abrirCheckoutPix(planKey, planPrice, planName, planCents) {
+    currentPlan = { key: planKey, price: planPrice, name: planName, cents: planCents };
+
+    const modal = document.getElementById('pix-modal');
+    modal.style.display = 'flex';
+
+    document.getElementById('buyer-form').style.display = 'block';
+    document.getElementById('pix-content').style.display = 'none';
+    document.getElementById('pix-delivered').style.display = 'none';
+    document.getElementById('buyer-name').value = '';
+    document.getElementById('buyer-email').value = '';
+    document.getElementById('pix-qr-code').src = '';
+    document.getElementById('pix-code-text').value = '';
+    document.getElementById('pix-status').textContent = '';
+
+    document.getElementById('pix-plan-name').textContent = planName;
+    document.getElementById('pix-plan-price').textContent = 'R$ ' + planPrice.toFixed(2).replace('.', ',');
+
+    if (pollInterval) { clearInterval(pollInterval); pollInterval = null; }
+  }
+
+  function gerarPix() {
+    const name = document.getElementById('buyer-name').value.trim();
+    const email = document.getElementById('buyer-email').value.trim();
+
+    if (!name || !email) {
+      document.getElementById('pix-status').textContent = 'Preencha nome e e-mail.';
+      document.getElementById('pix-status').style.color = '#ffcccc';
+      return;
+    }
+
+    const btn = document.getElementById('pix-generate-btn');
+    btn.disabled = true;
+    btn.textContent = 'Gerando...';
+    document.getElementById('pix-status').textContent = 'Gerando PIX...';
+    document.getElementById('pix-status').style.color = 'rgba(255,255,255,0.7)';
+
+    trackEvent('InitiateCheckout', {
+      content_name: 'Eduarda Oficial - ' + currentPlan.name,
+      content_category: 'Produto Digital',
+      value: currentPlan.price,
+      currency: 'BRL'
+    });
+
+    fetch('/api/create-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, plan: currentPlan.key })
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (!data.error) {
+        currentExternalId = data.external_id || data.id;
+        document.getElementById('buyer-form').style.display = 'none';
+        document.getElementById('pix-content').style.display = 'block';
+        if (data.pix && data.pix.qrcode_base64) {
+          document.getElementById('pix-qr-code').src = `data:image/png;base64,${data.pix.qrcode_base64}`;
+        }
+        if (data.pix && data.pix.code) {
+          document.getElementById('pix-code-text').value = data.pix.code;
+        }
+        const total = (data.total_amount || currentPlan.cents) / 100;
+        document.getElementById('pix-amount').textContent = 'R$ ' + total.toFixed(2).replace('.', ',');
+        document.getElementById('pix-status').textContent = 'Aguardando pagamento...';
+
+        iniciarPolling();
+      } else {
+        document.getElementById('pix-status').textContent = 'Erro: ' + (data.detail || data.error);
+        document.getElementById('pix-status').style.color = '#ffcccc';
+        btn.disabled = false;
+        btn.textContent = 'Tentar novamente';
+      }
+    })
+    .catch(() => {
+      document.getElementById('pix-status').textContent = 'Erro de conexão.';
+      document.getElementById('pix-status').style.color = '#ffcccc';
+      btn.disabled = false;
+      btn.textContent = 'Tentar novamente';
+    });
+  }
+
+  function iniciarPolling() {
+    if (pollInterval) clearInterval(pollInterval);
+    pollInterval = setInterval(verificarPagamento, 5000);
+  }
+
+  async function verificarPagamento() {
+    if (!currentExternalId) return;
+
+    try {
+      const res = await fetch(`/api/check-payment?external_id=${currentExternalId}`);
+      const data = await res.json();
+
+      if (data.status === 'paid') {
+        clearInterval(pollInterval);
+        pollInterval = null;
+        mostrarEntrega(data.link);
+
+        trackEvent('Purchase', {
+          content_name: 'Eduarda Oficial - ' + currentPlan.name,
+          content_category: 'Produto Digital',
+          value: currentPlan.price,
+          currency: 'BRL'
+        });
+      } else if (data.status === 'expired') {
+        clearInterval(pollInterval);
+        pollInterval = null;
+        document.getElementById('pix-status').textContent = 'PIX expirou.';
+        document.getElementById('pix-status').style.color = '#ffcccc';
+      }
+    } catch (e) {}
+  }
+
+  function mostrarEntrega(link) {
+    if (!link) return;
+    document.getElementById('pix-content').style.display = 'none';
+    document.getElementById('pix-delivered').style.display = 'block';
+    const btn = document.getElementById('pix-download-btn');
+    btn.href = link;
+    btn.onclick = () => {
+      navigator.clipboard.writeText(link);
+      window.open(link, '_blank');
+    };
+  }
+
+  function copiarCodigoPix() {
+    const code = document.getElementById('pix-code-text').value;
+    if (!code) return;
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = document.getElementById('pix-copy-btn');
+      btn.textContent = '✓ Copiado!';
+      btn.style.background = 'linear-gradient(to right, #28a745, #2ecc71)';
+      setTimeout(() => { btn.textContent = 'Copiar Código PIX'; btn.style.background = 'linear-gradient(to right, #4facfe, #00f2fe)'; }, 3000);
+    });
+  }
+
+  function fecharModalPix() {
+    const modal = document.getElementById('pix-modal');
+    modal.style.display = 'none';
+    if (pollInterval) { clearInterval(pollInterval); pollInterval = null; }
+  }
+
+  document.getElementById('close-pix-modal').addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    fecharModalPix();
+  });
+
+  document.getElementById('pix-modal').addEventListener('click', function(event) {
+    if (event.target === this) fecharModalPix();
+  });
+</script>
+
+<!-- Mirrored from www-privacy.shop/deg/desconto/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Nov 2025 01:55:19 GMT -->
+</html>
