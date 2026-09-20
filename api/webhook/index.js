@@ -1,6 +1,4 @@
-// API Endpoint: Webhook Handler
-// POST /api/webhook
-// Recebe eventos da BuckPay (transaction.created, transaction.processed)
+
 
 const crypto = require('crypto');
 const { processWebhook } = require('../webhook.js');
