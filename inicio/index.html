@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Quiz Exclusivo</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/pt_BR/fbevents.js');
+    fbq('init', '958954899926961');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=958954899926961&ev=PageView&noscript=1"
+    /></noscript>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #05070a; 
+            color: #fff; 
+        }
+        .quiz-btn {
+            width: 100%;
+            background: transparent;
+            border: 2px solid #ffffff;
+            border-radius: 9999px;
+            padding: 14px 20px;
+            font-weight: 700;
+            font-size: 15px;
+            color: #ffffff;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            outline: none;
+        }
+        .quiz-btn:hover {
+            border-color: #ff6b3d;
+            background: rgba(255, 107, 61, 0.15);
+            box-shadow: 0 0 15px rgba(255, 107, 61, 0.35);
+        }
+        .quiz-btn:active, .quiz-btn.selected {
+            transform: scale(0.97);
+            background: linear-gradient(90deg, #ff6b3d 0%, #ff4d2e 100%) !important;
+            border-color: transparent !important;
+            box-shadow: 0 0 25px rgba(255, 95, 31, 0.6) !important;
+        }
+        .cta-btn {
+            width: 100%;
+            background: linear-gradient(90deg, #ff6b3d 0%, #ff4d2e 100%);
+            border-radius: 9999px;
+            padding: 15px 24px;
+            font-weight: 800;
+            font-size: 15px;
+            color: #ffffff;
+            box-shadow: 0 4px 25px rgba(255, 95, 31, 0.45);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .cta-btn:hover {
+            box-shadow: 0 6px 30px rgba(255, 95, 31, 0.65);
+            filter: brightness(1.05);
+        }
+        .cta-btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-[420px] mx-auto text-center">
+
+        <!-- ETAPA 1 -->
+        <div id="step-1" class="space-y-6">
+            <div class="text-5xl animate-bounce">🔥</div>
+            <div class="space-y-2">
+                <h1 class="text-2xl sm:text-3xl font-black text-white">Você está pronto?</h1>
+                <p class="text-sm text-gray-400">Descubra o conteúdo exclusivo que preparamos para você</p>
+            </div>
+            <button onclick="nextStep(2)" class="cta-btn mt-4">VAMOS COMEÇAR</button>
+        </div>
+
+        <!-- ETAPA 2 -->
+        <div id="step-2" class="hidden space-y-6">
+            <div class="text-5xl">😍</div>
+            <div class="space-y-2">
+                <h2 class="text-2xl font-black text-white">Você gosta de conteúdo exclusivo?</h2>
+                <p class="text-xs text-gray-400">Conteúdo que não está em nenhum outro lugar</p>
+            </div>
+            <div class="space-y-3 pt-2">
+                <button onclick="handleOptionClick(this, 3)" class="quiz-btn">Sim, muito!</button>
+                <button onclick="handleOptionClick(this, 3)" class="quiz-btn">Depende...</button>
+            </div>
+        </div>
+
+        <!-- ETAPA 3 -->
+        <div id="step-3" class="hidden space-y-6">
+            <div class="text-5xl">📲</div>
+            <div class="space-y-2">
+                <h2 class="text-2xl font-black text-white">Você acompanha a DUDINHA nas redes sociais?</h2>
+                <p class="text-xs text-gray-400">conteudo +18</p>
+            </div>
+            <div class="space-y-3 pt-2">
+                <button onclick="handleOptionClick(this, 4)" class="quiz-btn">Sim, acompanho</button>
+                <button onclick="handleOptionClick(this, 4)" class="quiz-btn">Nunca vi</button>
+            </div>
+        </div>
+
+        <!-- ETAPA 4 -->
+        <div id="step-4" class="hidden space-y-6">
+            <div class="text-5xl">🔥</div>
+            <div class="space-y-2">
+                <h2 class="text-2xl font-black text-white">Você quer ver tudo sem filtro?</h2>
+                <p class="text-xs text-gray-400">Conteúdo pesado que não mostramos pra ninguém</p>
+            </div>
+            <div class="space-y-3 pt-2">
+                <button onclick="handleOptionClick(this, 5)" class="quiz-btn">Sim, quero tudo</button>
+                <button onclick="handleOptionClick(this, 5)" class="quiz-btn">Só o mais quente</button>
+            </div>
+        </div>
+
+        <!-- ETAPA 5 -->
+        <div id="step-5" class="hidden space-y-6">
+            <div class="text-5xl">🎯</div>
+            <div class="space-y-2">
+                <h2 class="text-2xl font-black text-white">Última pergunta!</h2>
+                <p class="text-xs text-gray-400">Você prefere ver tudo de uma vez ou ir descobrindo?</p>
+            </div>
+            <div class="space-y-3 pt-2">
+                <button onclick="handleLoadingClick(this)" class="quiz-btn">Tudo de uma vez</button>
+                <button onclick="handleLoadingClick(this)" class="quiz-btn">Ir descobrindo</button>
+            </div>
+        </div>
+
+        <!-- ETAPA 6: LOADING 97% -->
+        <div id="step-loading" class="hidden space-y-5">
+            <div class="relative w-20 h-20 mx-auto flex items-center justify-center">
+                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                    <path class="text-gray-800" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="text-orange-500" stroke-dasharray="97, 100" stroke-width="3.5" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                </svg>
+            </div>
+            <div>
+                <span id="percentage" class="text-4xl font-black text-orange-500 tracking-tight">0%</span>
+                <p class="text-xs text-gray-400 mt-2">Verificando sua compatibilidade...</p>
+                <div class="w-32 h-1 bg-orange-500 rounded-full mx-auto mt-2 animate-pulse"></div>
+            </div>
+        </div>
+
+        <!-- ETAPA 7: APROVADO -->
+        <div id="step-approved" class="hidden space-y-6">
+            <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto shadow-lg shadow-green-500/40 animate-pulse">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <div class="space-y-2">
+                <h2 class="text-2xl font-black text-white">Você foi aprovado!</h2>
+                <p class="text-xs text-gray-300 px-4 leading-relaxed">
+                    Parabéns! Você tem acesso exclusivo ao nosso conteúdo. Clique abaixo para garantir seu acesso agora!
+                </p>
+            </div>
+            <button onclick="goToLanding()" class="cta-btn mt-4 flex items-center justify-center gap-2">
+                <span>QUERO MEU ACESSO</span>
+                <span>→</span>
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        function handleOptionClick(btn, nextStepNum) {
+            btn.classList.add('selected');
+            setTimeout(function() {
+                nextStep(nextStepNum);
+            }, 180);
+        }
+
+        function handleLoadingClick(btn) {
+            btn.classList.add('selected');
+            setTimeout(function() {
+                startLoading();
+            }, 180);
+        }
+
+        function nextStep(stepNumber) {
+            for (let i = 1; i <= 5; i++) {
+                var el = document.getElementById('step-' + i);
+                if (el) el.classList.add('hidden');
+            }
+            document.getElementById('step-' + stepNumber).classList.remove('hidden');
+        }
+
+        function startLoading() {
+            document.getElementById('step-5').classList.add('hidden');
+            document.getElementById('step-loading').classList.remove('hidden');
+
+            var percentageEl = document.getElementById('percentage');
+            var current = 0;
+            
+            var interval = setInterval(function() {
+                current += 3;
+                if (current >= 97) {
+                    current = 97;
+                    percentageEl.innerText = '97%';
+                    clearInterval(interval);
+                    setTimeout(function() {
+                        document.getElementById('step-loading').classList.add('hidden');
+                        document.getElementById('step-approved').classList.remove('hidden');
+                    }, 500);
+                } else {
+                    percentageEl.innerText = current + '%';
+                }
+            }, 35);
+        }
+
+        function goToLanding() {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
+            window.location.replace('https://www.privacy-eduarda.site/');
+        }
+    </script>
+</body>
+</html>
